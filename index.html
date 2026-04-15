@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calm Connect - Deaf Communication App</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- FontAwesome for standard icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="theme-light layout-right font-medium">
+
+    <!-- Starry background for dark mode -->
+    <div id="stars-container"></div>
+
+    <!-- Intro Positive Loader -->
+    <div id="loader">
+        <div class="loader-content">
+            <h2 id="loader-quote">Every day is a fresh start.</h2>
+            <div class="spinner"></div>
+        </div>
+    </div>
+
+    <!-- App Header -->
+    <header id="app-header">
+        <div class="logo-container">
+            <img src="assets/logo.png" alt="Ear covered in gold dust logo" class="logo">
+        </div>
+        <div class="header-controls">
+            <button id="btn-font" title="Toggle Font Size"><i class="fa-solid fa-text-height"></i></button>
+            <button id="btn-theme" title="Toggle Light/Dark Theme"><i class="fa-solid fa-moon"></i></button>
+            <button id="btn-lefty" title="Toggle Lefty Mode"><i class="fa-solid fa-hand-holding-hand"></i></button>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main id="main-content">
+
+        <!-- Chat Interface Section -->
+        <section id="chat-section" class="active-section">
+            <div id="chat-history">
+                <!-- Messages will be populated here -->
+                <div class="message bot-message">
+                    <p>Hello! How can I help you today? Or use this space to converse with others.</p>
+                </div>
+            </div>
+
+            <div id="input-area">
+                <div id="input-display-box">
+                    <span class="placeholder">Type or use ASL keyboard...</span>
+                    <!-- Text preview area -->
+                    <span id="input-text"></span>
+                </div>
+                <button id="btn-send"><i class="fa-solid fa-paper-plane"></i></button>
+                <button id="btn-clear"><i class="fa-solid fa-trash-can"></i></button>
+            </div>
+
+            <!-- ASL & Emergency Keyboard -->
+            <div id="asl-keyboard">
+                <div class="emergency-keys">
+                    <button class="key em-key" data-val="[EMERGENCY]">Help / Emergency</button>
+                    <button class="key em-key" data-val="[MEDICAL]">Ambulance</button>
+                    <button class="key em-key" data-val="[DOCTOR]">Doctor</button>
+                    <button class="key em-key" data-val="[PAIN]">Pain</button>
+                </div>
+                <div class="alpha-keys" id="alpha-keys-container">
+                    <!-- A-Z keys dynamically injected here -->
+                </div>
+                <div class="control-keys">
+                    <button class="key ctrl-key" id="key-space">Space</button>
+                    <button class="key ctrl-key" id="key-backspace">Backspace</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sign Language Interpreter Section -->
+        <section id="camera-section">
+            <div class="camera-wrapper">
+                <video id="webcam" autoplay playsinline></video>
+                <div class="interpreter-overlay">
+                    <div id="translation-output">Scanning for signs... ✋</div>
+                </div>
+            </div>
+            <p style="text-align: center; margin-top: 15px; font-size: 0.9em; opacity: 0.8; font-style: italic;">
+                Disclaimer: Please move to a brighter area if the environment lacks enough light.</p>
+            <div class="camera-controls">
+                <button id="btn-start-camera" class="primary-btn"><i class="fa-solid fa-camera"></i> Start
+                    Interpreter</button>
+                <button id="btn-stop-camera" class="secondary-btn"><i class="fa-solid fa-video-slash"></i> Stop</button>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Bottom Navigation for thumb reachability -->
+    <nav id="bottom-nav">
+        <button class="nav-btn active" data-target="chat-section">
+            <i class="fa-solid fa-comments"></i>
+            <span>Chat</span>
+        </button>
+        <button class="nav-btn" data-target="camera-section">
+            <i class="fa-solid fa-hands-asl-interpreting"></i>
+            <span>Interpreter</span>
+        </button>
+    </nav>
+
+    <script src="app.js" defer></script>
+</body>
+
+</html>
