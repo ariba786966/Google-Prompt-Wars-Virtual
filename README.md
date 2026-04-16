@@ -1,7 +1,7 @@
 # Google-Prompt-Wars-Virtual
 # Medical app dashboard
 
-# The vision: - In emergency situation, a deaf person is in a critical situation and needs help. Every second matters. This app is design with vision that this app will be pre-installed in hospital's systems, it will help deaf people to communicate with the medical staff and get the help they need. 
+# The vision: - In emergency situation, a deaf person is in a critical situation and needs help. Every second matters. This app is design with vision that this app will be pre-installed in hospital's systems, it will help deaf people to communicate with the medical staff and get the assistance they need. 
 
 # The app will have the following features: -
 1. ASL keyboard with different font size.
